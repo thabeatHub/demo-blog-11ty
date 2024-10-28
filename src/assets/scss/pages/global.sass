@@ -1,0 +1,60 @@
+html
+    min-height: 100vh
+    min-height: 100dvh
+    *
+        max-width: 100%
+        
+body
+    font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+    background-color: $background-color
+    //outline: solid 1px red
+    margin: 0
+    max-width: 100%
+    color: $text-color-dark
+    font-size: calc(12px + 0.5vw)
+    display: grid
+
+#default-template-container
+    margin: 0
+    min-height: 100vh
+    position: relative
+    display: grid
+    grid-template-rows: auto 1fr auto
+
+main, header, footer
+    display: grid
+
+main
+    padding: 2em 0
+    position: relative
+
+    #main-content
+        position: relative
+        max-width: 100%
+
+        .main-content
+            position: relative
+            max-width: 100%
+
+a, a:visited
+    color: $text-color-dark
+p
+    text-align: justify
+
+img
+    height: clamp( 100px, 100%, 60vh) 
+    width: auto
+
+// override bootstrap primary blue
+.btn, .btn-primary
+    background-color: $main-corpo-color !important
+    color: $text-color-light !important
+    border-color: $main-corpo-color !important
+
+@media screen and (max-width: 768px)
+    body   
+        font-size: calc(10px + 0.5vw)
+        
+    img
+        width: clamp( 100px, 100%, 60vw) 
+        height: auto

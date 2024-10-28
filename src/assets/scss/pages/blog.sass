@@ -1,0 +1,63 @@
+#blog-main
+    nav
+        ul
+            display: inline-block
+            list-style-type: none
+            padding: 0
+            margin-bottom: 0 
+        li
+            list-style: none
+            float: left
+            padding: 0 1em
+            line-height: 1em
+            p
+                filter: opacity(25%)
+            a
+                text-decoration: none
+                font-weight: bold
+        li.active
+            a,p
+                color: $main-corpo-color
+
+        li:first
+            padding-left: 0
+    
+    #posts-list
+        padding-bottom: 2em
+        margin-top: -24px
+
+        .image-container
+            position: relative
+            overflow: hidden
+        
+        .image-container::after
+            content: ""
+            display: block
+            padding-bottom: 25vh
+        
+        img
+            position: absolute
+            top: 0
+            left: 0
+            max-width: 100%
+            max-height: 100%
+            width: 100%
+            height: auto
+            object-fit: cover
+        
+    #posts-view-list
+        
+        .card
+            margin-bottom: 5em
+            
+            h3
+                color: $text-color-light
+                @include textStroke(1px, 2px, $main-dark)
+
+            img.blog-native
+                height: 200px
+                width: auto
+                object-fit: cover
+                
+            .card-img-overlay
+                max-height: 200px

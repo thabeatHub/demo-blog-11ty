@@ -1,0 +1,44 @@
+.logo
+  line-height: 4rem
+  display: flex
+  flex-direction: column
+  text-align: center
+  gap: 1rem
+
+img#logo
+  display: inline-block
+  max-width: 60vw
+  height: auto
+  max-height: 40vh
+  margin: auto
+  
+
+#text-branding
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 0
+
+  p.title 
+    display: inline-block
+    text-align: center
+    max-width: 100%
+
+  #corpo-name
+    font-family: 'Lilita One', cursive
+    font-size: 5rem
+    font-weight: bolder
+    color: $main-corpo-color
+    @include textStroke(2px, 2px, $main-dark)
+
+  #corpo-motto
+    text-align: right
+    font-family: 'Dancing Script', cursive
+    font-size: 1.8rem
+
+// h1.logo.d-md-none 
+//   img#logo
+//     padding-top: 15%
+//     max-width: 60%
+//     // max-height: 20%
+//     // width: auto

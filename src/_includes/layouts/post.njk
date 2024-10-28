@@ -1,0 +1,28 @@
+---
+layout: "layouts/base.njk"
+---
+
+<div class="front">
+</div>
+<div class="container-md main-content clearfix" id="post-main">
+    <h1 class="title" id="post-title">
+        {{ title | safe }}
+    </h1>
+    <div class="date mb-4 muted">
+        {{ author }} ({{ page.date | readableDate }})
+    </div>
+    <div class="post container-fluid" id="post-content">
+        {{ content | safe }}
+    </div>
+    
+</div>
+<script>
+    var postImages = document.querySelectorAll(".post-image");
+    postImages.forEach((element, index) => {
+        element.classList.add("image-fluid");
+        if (index%2 === 0) {
+            element.classList.remove("float-md-start", "pe-md-4");   
+            element.classList.add("even-image", "float-md-end", "ps-md-4");            
+        }        
+    });
+</script>

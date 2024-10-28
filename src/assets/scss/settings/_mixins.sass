@@ -1,0 +1,14 @@
+@function addShadow($distance, $spread, $color)
+   $new-list: ()
+   $new-list: append($new-list, $distance -#{$distance} $spread $color, comma )
+   $new-list: append($new-list, $distance $distance $spread $color)
+   $new-list: append($new-list, -#{$distance} -#{$distance} $spread $color)
+   $new-list: append($new-list, -#{$distance} $distance $spread $color) 
+   // @debug $new-list
+   @return $new-list
+
+@mixin textStroke($distance, $spread, $color) 
+   text-shadow: addShadow($distance, $spread, $color)
+   
+
+  

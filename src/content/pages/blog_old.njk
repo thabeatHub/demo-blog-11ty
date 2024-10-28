@@ -1,0 +1,97 @@
+---
+layout: "layouts/base.njk"
+pagination:
+    data: collections.posts
+    size: 4
+    reverse: true
+    alias: posts
+title: More Blog
+order: 100
+---
+
+<div class="main-content container-fluid m-auto" id="blog-main">
+    <nav aria-labelledby="blog-pagination" id="blog-pagination" 
+    class="row row-cols-1 row-cols-md-2 gx-4 mx-auto">
+        <ul>
+            <li class="previous pagination">
+                {% if pagination.href.previous %}
+                <a href="{{ pagination.href.previous }}">
+                    <i class="bi-box-arrow-left"></i>
+                </a>
+                {% else %}
+                <p class="disabled">
+                    <i class="bi-box-arrow-left"></i>
+                </p>
+                {% endif %}
+            </li>
+            {%- for pageEntry in pagination.pages %}
+            <li class="page-number {% if page.url==pagination.hrefs[ loop.index0 ] %}active{% endif %}">
+                <a href="{{ pagination.hrefs[ loop.index0 ] }}"
+                {% if page.url==pagination.hrefs[ loop.index0 ] %}
+                    aria-current="page" {% endif %}>
+                    {{ loop.index }}
+                </a>
+            </li>
+            {%- endfor %}
+            <li class="next pagination">
+                {% if pagination.href.next %}
+                <a href="{{ pagination.href.next }}">
+                    <i class="bi-box-arrow-right"></i>
+                </a>
+                {% else %}
+                <p class="disabled">
+                    <i class="bi-box-arrow-right"></i>
+                </p>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+    
+    <div id="posts-list"
+        class="row row-cols-1 row-cols-md-2 g-4">
+    
+        {% for post in posts %}
+            <div class="col card-group align-items-stretch">
+                <div class="card">
+                    <div class="col">
+                        <div class="container-fluid image-container">
+                            <img
+                            src="https://picsum.photos/seed/{{
+                                [0, 1,2,3,4,5,6,7,8,9] | random
+                            }}
+                            {{
+                                [0, 1,2,3,4,5,6,7,8,9] | random
+                            }}
+                            {{
+                                [0,1,2,3,4,5,6,7,8,9] | random
+                            }}/300/500"
+                            preserveAspectRatio="xMidYMid"
+                            class="img-fluid img-thumbnail rounded-start card-image" />
+                        </div>
+                        <div class="row-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    {{ post.data.title }}
+                                </h3>
+                                <div class="mb-1 text-muted">
+                                    {{ post.date | readableDate }}
+                                    {# {{ post.date.toLocaleDateString() }} #}
+                                </div>
+                                <p class="card-text mb-auto">
+                                    {{ post.content | safe | excerpt }}
+                                </p>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="text-center card-footer d-flex justify-content-center align-items-end">
+                        <a href="{{ post.url }}" class="stretched-link btn btn-primary">
+                            Continue Reading
+                        </a>
+                    </div>
+    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

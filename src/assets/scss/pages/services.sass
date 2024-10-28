@@ -1,0 +1,85 @@
+/*Our Services*/
+
+
+#services-cards
+    display: flex
+    justify-content: center
+    align-items: center
+    box-sizing: border-box
+    font-family: 'Poppins', sans-serif
+    margin: 50px auto 100px auto
+    text-justify: distribute
+    font-size: .8em
+
+    .card
+        width: clamp(180px, 30vw, 200px)
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding: 10px 25px
+        position: relative
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+        height: 100%
+
+        .fas.fa-arrow-right
+            position: absolute
+            bottom: -100px
+            background-color: $main-corpo-color
+            height: 50px
+            width: 50px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 50%
+            color: $main-light
+            opacity: 0
+            transform: translateY(50%)
+            transition: all 0.5s ease
+            text-decoration: none
+
+        .service-icon
+            font-size: 40px
+            background-color: $main-light
+            height: 100px
+            width: 100px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 50%
+            color: $main-corpo-color
+        
+        .h4
+            font-weight: 700
+            font-size: 1.2rem
+        p.text-muted
+            justify-self: end
+
+    .card:hover 
+        .fas.fa-arrow-right
+            bottom: 0px
+            opacity: 1
+        .service-icon
+            color: $main-light
+            background-color: $main-corpo-color
+
+    .content
+        max-width: 100%
+
+        .h-6
+            color: $main-corpo-color
+            font-weight: 600
+
+        .btn.btn-primary
+            padding: 15px
+            background-color: $main-corpo-color
+            color: $menu-text-shadow-light
+            border: none
+            box-shadow: none
+
+
+    @media (max-width:765px)
+        font-size: 1em
+        .card
+            width: 100%
+
+        

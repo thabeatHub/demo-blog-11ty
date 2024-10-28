@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+html {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+html * {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #e6e6e6;
+  margin: 0;
+  max-width: 100%;
+  color: #222;
+  font-size: calc(12px + 0.5vw);
+  display: grid;
+}
+
+#default-template-container {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main, header, footer {
+  display: grid;
+}
+
+main {
+  padding: 2em 0;
+  position: relative;
+}
+main #main-content {
+  position: relative;
+  max-width: 100%;
+}
+main #main-content .main-content {
+  position: relative;
+  max-width: 100%;
+}
+
+a, a:visited {
+  color: #222;
+}
+
+p {
+  text-align: justify;
+}
+
+img {
+  height: clamp(100px, 100%, 60vh);
+  width: auto;
+}
+
+.btn, .btn-primary {
+  background-color: #9d272d !important;
+  color: #e6e6e6 !important;
+  border-color: #9d272d !important;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: calc(10px + 0.5vw);
+  }
+  img {
+    width: clamp(100px, 100%, 60vw);
+    height: auto;
+  }
+}
+#blog-main nav ul {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+#blog-main nav li {
+  list-style: none;
+  float: left;
+  padding: 0 1em;
+  line-height: 1em;
+}
+#blog-main nav li p {
+  filter: opacity(25%);
+}
+#blog-main nav li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+#blog-main nav li.active a, #blog-main nav li.active p {
+  color: #9d272d;
+}
+#blog-main nav li:first {
+  padding-left: 0;
+}
+#blog-main #posts-list {
+  padding-bottom: 2em;
+  margin-top: -24px;
+}
+#blog-main #posts-list .image-container {
+  position: relative;
+  overflow: hidden;
+}
+#blog-main #posts-list .image-container::after {
+  content: "";
+  display: block;
+  padding-bottom: 25vh;
+}
+#blog-main #posts-list img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+#blog-main #posts-view-list .card {
+  margin-bottom: 5em;
+}
+#blog-main #posts-view-list .card h3 {
+  color: #e6e6e6;
+  text-shadow: 1px -1px 2px #222, 1px 1px 2px #222, -1px -1px 2px #222, -1px 1px 2px #222;
+}
+#blog-main #posts-view-list .card img.blog-native {
+  height: 200px;
+  width: auto;
+  object-fit: cover;
+}
+#blog-main #posts-view-list .card .card-img-overlay {
+  max-height: 200px;
+}
+
+/*Our Services*/
+#services-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+#services-cards .card {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 25px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#services-cards .card .fas.fa-arrow-right {
+  position: absolute;
+  bottom: -100px;
+  background-color: #9d272d;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #e6e6e6;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 0.5s ease;
+}
+#services-cards .card:hover .fas.fa-arrow-right {
+  bottom: 0px;
+  opacity: 1;
+}
+#services-cards .card .fab.fa-envira,
+#services-cards .fas.fa-cut,
+#services-cards .fas.fa-people-carry {
+  font-size: 40px;
+  background-color: #e6e6e6;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #9d272d;
+}
+#services-cards .card .h4 {
+  font-weight: 700;
+}
+#services-cards .content {
+  max-width: 100%;
+}
+#services-cards .content .h-6 {
+  color: #9d272d;
+  font-weight: 600;
+}
+#services-cards .content .btn.btn-primary {
+  padding: 15px;
+  background-color: #9d272d;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+}
+#services-cards .card:hover .fab.fa-envira,
+#services-cards .card:hover .fas.fa-cut,
+#services-cards .card:hover .fas.fa-people-carry {
+  color: #e6e6e6;
+  background-color: #9d272d;
+}
+@media (max-width: 765px) {
+  #services-cards .card {
+    width: 100%;
+  }
+}
+
+div#contact-form {
+  display: block;
+  margin: auto;
+  color: #222;
+}
+div#contact-form form * {
+  width: 100%;
+  margin: 5px 0;
+  position: relative;
+}
+div#contact-form form textarea {
+  min-height: 25vh;
+  padding: 6px 12px;
+}
+div#contact-form form .form-button {
+  display: block;
+  min-width: 50%;
+  max-width: 50%;
+  padding: 0.5em;
+  margin: 0 25%;
+  background-color: #9d272d;
+  color: #e6e6e6;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+  font-weight: bold;
+}
+div#contact-form form .form-button:before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  inset: 10;
+}
+
+@media screen and (max-width: 720px) {
+  div.content {
+    margin: 0 5%;
+    width: 90%;
+  }
+}
+header {
+  background-color: #9d272d;
+}
+
+#main-menu {
+  font-size: 1.2rem;
+  background-color: #9d272d;
+  min-height: 10rem;
+}
+#main-menu .nav-pills {
+  min-height: 100%;
+}
+#main-menu .nav-pills .nav-item {
+  display: flex;
+  align-items: center;
+}
+#main-menu .nav-pills .nav-item .nav-link.active {
+  background-color: #222;
+}
+#main-menu .nav-pills a, #main-menu .nav-pills a:visited {
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: normal;
+  color: #e6e6e6;
+}
+#main-menu .nav-pills a:hover {
+  text-shadow: 1px 1px 1px #fff;
+}
+#main-menu .nav-pills a:hover svg {
+  filter: drop-shadow(1px 1px 1px #fff);
+}
+#main-menu .nav-pills .dropdown-menu {
+  background-color: #9d272d !important;
+  filter: brightness(115%);
+}
+#main-menu .nav-pills .dropdown-item {
+  background-color: #9d272d !important;
+}
+#main-menu .nav-pills .dropdown-item:hover {
+  filter: brightness(85%);
+}
+#main-menu #menu-toggler {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#main-menu #menu-toggler .navbar-toggler:focus {
+  box-shadow: none;
+}
+#main-menu #menu-toggler .navbar-toggler {
+  min-height: 100%;
+  align-items: right;
+  color: #e6e6e6;
+  border-width: 2px;
+  border-color: #e6e6e6;
+}
+#main-menu #menu-toggler .navbar-toggler .navbar-toggler-icon {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  background-image: none;
+}
+#main-menu #menu-toggler .navbar-toggler svg {
+  fill: #e6e6e6;
+  viewbox: 0 0 1em 1em;
+}
+
+nav#collapsablemenu {
+  background-color: #222;
+  font-size: 1rem;
+  color: #e6e6e6;
+}
+nav#collapsablemenu .nav-item .nav-link {
+  padding: 1ex 2em;
+  color: #e6e6e6;
+  text-transform: capitalize;
+}
+nav#collapsablemenu .nav-item .nav-link:hover {
+  color: #e6e6e6;
+  text-shadow: 1px 1px 1px #fff;
+}
+nav#collapsablemenu .nav-item .nav-link:hover svg {
+  filter: drop-shadow(1px 1px 1px #fff);
+}
+nav#collapsablemenu .nav-item .nav-link.active {
+  min-width: 50%;
+  background-color: #9d272d;
+}
+
+.logo {
+  line-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+img#logo {
+  display: inline-block;
+  max-width: 60vw;
+  height: auto;
+  max-height: 40vh;
+  margin: auto;
+}
+
+#text-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+#text-branding p.title {
+  display: inline-block;
+  text-align: center;
+  max-width: 100%;
+}
+#text-branding #corpo-name {
+  font-family: "Lilita One", cursive;
+  font-size: 5rem;
+  font-weight: bolder;
+  color: #9d272d;
+  text-shadow: 2px -2px 2px #222, 2px 2px 2px #222, -2px -2px 2px #222, -2px 2px 2px #222;
+}
+#text-branding #corpo-motto {
+  text-align: right;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+}
+
+footer {
+  position: absolut;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  font-size: 1rem;
+  background-color: #9d272d;
+  color: #e6e6e6;
+}
+footer #footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tooltips {
+  display: flex;
+}
+#tooltips button {
+  margin: 1em 0;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+#carousel-container {
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 992px) {
+  #tooltips {
+    flex-direction: column;
+  }
+}
+#post-main #post-content {
+  padding: 0;
+  text-indent: 1rem;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/settings/_fonts.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/pages/global.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/settings/_colors.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/pages/blog.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/settings/_mixins.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/pages/services.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/pages/contact.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/partials/header.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/partials/nav.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/partials/logo.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/partials/footer.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/partials/examples.sass%22,%22file:///home/thabeat/ubuntu_projects/Personal%2520WebSpaces/tests-eleventy/demo-blog/src/assets/scss/partials/post.sass%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AACA;ACLR;EACI;EACA;;AACA;EACI;;;AAER;EACI;EACA,kBCMS;EDJT;EACA;EACA,OCGQ;EDFR;EACA;;;AAEJ;EACI;EACA;EACA;EACA;EACA;;;AAEJ;EACI;;;AAEJ;EACI;EACA;;AAEA;EACI;EACA;;AAEA;EACI;EACA;;;AAEZ;EACI,OCxBQ;;;ADyBZ;EACI;;;AAEJ;EACI;EACA;;;AAGJ;EACI;EACA;EACA;;;AAEJ;EACI;IACI;;EAEJ;IACI;IACA;;;AEzDA;EACI;EACA;EACA;EACA;;AACJ;EACI;EACA;EACA;EACA;;AACA;EACI;;AACJ;EACI;EACA;;AAEJ;EACI,ODHG;;ACKX;EACI;;AAER;EACI;EACA;;AAEA;EACI;EACA;;AAEJ;EACI;EACA;EACA;;AAEJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAIJ;EACI;;AAEA;EACI,ODvCH;EEJV;;AD8CS;EACI;EACA;EACA;;AAEJ;EACI;;;AE9DhB;AAGA;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEJ;EACI;EACA;EACA,kBHNW;EGOX;EACA;EACA;EACA;EACA;EACA;EACA,OHfK;EGgBL;EACA;EACA;;AAEJ;EACI;EACA;;AAGJ;AAAA;AAAA;EAGI;EACA,kBH7BK;EG8BL;EACA;EACA;EACA;EACA;EACA;EACA,OHlCW;;AGoCf;EACI;;AAEJ;EACI;;AAEJ;EACI,OH3CW;EG4CX;;AAEJ;EACI;EACA,kBHhDW;EGiDX,OH1CiB;EG2CjB;EACA;;AAEJ;AAAA;AAAA;EAGI,OH1DK;EG2DL,kBHzDW;;AG2Df;EACI;IACI;;;;AC7EZ;EACI;EACA;EACA,OJYQ;;AITJ;EACI;EACA;EACA;;AAEJ;EACI;EACA;;AAEJ;EACI;EACA;EACA;EACA;EACA;EACA,kBJLO;EIMP,OJRC;EISD;EACA;EACA;EACA;;AAEA;EACI;EACA,kBJPS;EIQT;EACA;EACA;EACA;;;AAEhB;EACI;IACI;IACA;;;ACvCR;EACI,kBLee;;;AMhBnB;EACI;EAEA,kBNae;EMZf;;AAEA;EACI;;AAEA;EACI;EACA;;AAEA;EACI,kBNCJ;;AMCJ;EACI;EACA;EACA;EACA,ONNC;;AMQL;EAEI;;AACA;EACI;;AACR;EACI;EACA;;AACJ;EACI;;AACA;EACI;;AAKZ;EACI;EACA;;AACA;EACQ;;AACR;EACI;EACA;EACA,ONhCC;EMkCD;EACA,cNnCC;;AMqCD;EACI;EACA;EACA;EACA;EACA;EAEA;;AACJ;EACI,MN9CH;EM+CG;;;AAEhB;EACI,kBNjDQ;EMkDR;EACA,ONpDS;;AM2DL;EACI;EACA,ON7DC;EM8DD;;AAEA;EACI,ONjEH;EMkEG;;AACA;EACI;;AAGR;EACI;EACA,kBNvEG;;;AOhBnB;EACE;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA,OPde;EENhB;;AKuBD;EACE;EACA;EACA;;;ACpCJ;EACI;EACA;EACA;EACA;EACA;EACA,kBRUe;EQTf,OROS;;AQJT;EACI;EACA;EACA;;;ACbR;EACI;;AAIA;EACI;EACA;EACA;EACA;;;AAER;EACI;EACA;EACA;;;AAEJ;EACI;IACI;;;AChBJ;EACI;EACA%22,%22file%22:%22main.css%22%7D */

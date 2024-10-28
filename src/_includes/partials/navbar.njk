@@ -1,0 +1,97 @@
+<div class="navigation-menu container-md m-auto navbar " id="main-menu">
+    <div class="row container-md">
+        <ul class="col container-md m-auto d-none d-md-flex nav nav-pills">
+            <li class="nav-item">
+                <a href="/"  
+                {% if page.url == "/" %} 
+                    class="nav-link active"
+                    aria-selected="true" 
+                    aria-current="page" 
+                {% else %}
+                    class="nav-link"
+                    aria-selected="false"
+                {% endif %} 
+                aria-controls="pills-home"
+                >
+                    <i class="bi-house-fill"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Examples
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/accordions/">Accordions</a></li>
+                    <li><a class="dropdown-item" href="/popovers/">Popovers</a></li>
+                    <li><a class="dropdown-item" href="/tooltips/">Tooltips</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/carousel/">Carousel</a></li>
+                    <li><a class="dropdown-item" href="/our-services/">Our Services</a></li>
+                </ul>
+            </li>
+            {% for item in collections.pages | sort(false, false, 'data.order') %}
+            <li class="nav-item">
+                <a href="{{ item.url }}" 
+                {% if page.url == item.url %} 
+                    class="nav-link active"
+                    aria-selected="true" 
+                    aria-current="page" 
+                {% else %}
+                    class="nav-link"
+                    aria-selected="false"
+                {% endif %} 
+                aria-controls="pills-home"
+                >
+                    {{ item.data.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="col align-self-end d-md-none container-md" id="menu-toggler">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsablemenu" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="navbar-toggler-icon bi bi-list"></i>
+            </button>
+        </div> 
+    </div>
+</div>
+<nav class="navbar collapse d-md-none container-md m-auto" id="collapsablemenu">
+    <div class="container-fluid">
+        <ul class="container navbar-nav nav-pills p-0">
+            <li class="nav-item">
+                <a href="/" {% if page.url=="/" %} class="nav-link active" aria-selected="true" aria-current="page" {% else %}
+                    class="nav-link" aria-selected="false" {% endif %} aria-controls="pills-home">
+                    <i class="bi-house-fill"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSmall" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Examples
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownSmall">
+                    <li><a class="dropdown-item" href="/accordions/">Accordions</a></li>
+                    <li><a class="dropdown-item" href="/popovers/">Popovers</a></li>
+                    <li><a class="dropdown-item" href="/tooltips/">Tooltips</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/carousel/">Carousel</a></li>
+                    <li><a class="dropdown-item" href="/our-services/">Our Services</a></li>
+                </ul>
+            </li>
+            {% for item in collections.pages | sort(false, false, 'data.order') %}
+            <li class="nav-item">
+                <a href="{{ item.url }}" {% if page.url==item.url %} class="nav-link active" aria-selected="true"
+                    aria-current="page" {% else %} class="nav-link" aria-selected="false" {% endif %} aria-controls="pills-home">
+                    {{ item.data.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
